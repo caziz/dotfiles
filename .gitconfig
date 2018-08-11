@@ -1,0 +1,63 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Christopher Aziz
+	email = caziz@ucla.edu
+[core]
+	excludesfile = /Users/christopheraziz/.gitignore_global
+	editor = subl -n -w
+
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+[alias]
+	alias = !git config -l | grep alias | cut -c 7-
+	ec = config --global -e
+	co = checkout
+	cob = checkout -b
+	br = branch
+	st = status -s
+	cam = commit -am
+	cm = commit -m
+
+	branches = branch -a
+	tags = tag
+	stashes = stash list
+	remotes = remote -v
+
+	unstage = reset -q HEAD --
+	discard = checkout --
+	uncommit = reset --mixed HEAD~1
+	amend = commit --amend
+	precommit = diff --cached --diff-algorithm=minimal -w
+	unmerged = diff --name-only --diff-filter=U
+	nuke = !git reset --hard HEAD && git clean -df
+
+	cane = commit --ammend --no-edit
+	dlc = diff --cached HEAD^
+
+	index = ls-files -s
+	head = ls-tree -r HEAD
+	last = log -1 HEAD
+	graph = log --graph --pretty=format:'%C(bold yellow)%d %C(reset)%C(cyan)%h %C(dim white)- %C(reset)%s %C(dim blue)(%cr) %C(dim white)<%an>%Creset' --abbrev-commit --date=short --all
+
+
+[push]
+	default = tracking
+[credential]
+	helper = osxkeychain
