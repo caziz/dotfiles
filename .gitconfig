@@ -34,12 +34,14 @@
 	st = status -s
 	cam = commit -am
 	cm = commit -m
+	lg = log --oneline
 
 	branches = branch -a
 	tags = tag
 	stashes = stash list
 	remotes = remote -v
-
+	
+	patch = add -p
 	unstage = reset -q HEAD --
 	discard = checkout --
 	uncommit = reset --mixed HEAD~1

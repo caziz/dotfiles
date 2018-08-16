@@ -12,18 +12,29 @@ source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-complet
 source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 # source /usr/local/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='[\u \w$(__git_ps1)]\$ '
+green='[\e[2;32m'
+blue='\e[0;34m'
+red='\e[0;35m'
+git='$(__git_ps1)'
+clear='\e[m'
+prompt="${green}\u ${blue}\w${red}${git}${clear}]"
+export PS1="$prompt\$ "
+export PS2="$prompt  "
+unset green blue red git clear prompt
 
-
-# OPAM configuration
+# OPAM (OCaml) configuration
 . /Users/christopheraziz/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-# Add racket to path
+# Add Racket (Scheme) to path
 PATH="/Applications/Racket v6.12/bin:${PATH}"
 export PATH
 
-# Setting PATH for Python 3.6
+# Add Python 3.6 to path
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
+# Add Sumblime to path
+# PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:${PATH}"
+# export PATH
+# export EDITOR='subl -w'
