@@ -26,12 +26,13 @@
   changed = yellow
   untracked = red
 [alias]
-	alias = !git config -l | grep alias | cut -c 7-
+	url = !open $(git config remote.origin.url)
+	alias = !git config -l | grep alias | less
 	ec = config --global -e
 	co = checkout
 	cob = checkout -b
 	br = branch
-	st = status -s
+	st = status -sb
 	cam = commit -am
 	cm = commit -m
 	lg = log --oneline

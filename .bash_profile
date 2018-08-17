@@ -12,7 +12,7 @@ source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-complet
 source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 # source /usr/local/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
-green='\[\e[2;32m\]'
+green='\[\e[0;32m\]'
 blue='\[\e[0;34m\]'
 red='\[\e[0;35m\]'
 git='$(__git_ps1)'
