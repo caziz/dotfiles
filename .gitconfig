@@ -21,21 +21,35 @@
   frag = magenta bold
   old = red bold
   new = green bold
+  whitespace = normal red
 [color "status"]
   added = green
   changed = yellow
   untracked = red
 [alias]
 	url = !open $(git config remote.origin.url)
+
 	alias = !git config -l | grep alias | less
 	ec = config --global -e
+
 	co = checkout
 	cob = checkout -b
 	br = branch
 	st = status -sb
-	cam = commit -am
-	cm = commit -m
 	lg = log --oneline
+	gr = log --graph \
+	--pretty=format:'%C(bold yellow)%d \
+	%C(reset)%C(cyan)%h %C(dim white)- \
+	%C(reset)%s %C(dim blue)(%cr) \
+	%C(dim white)<%an>%C(reset)' \
+	--abbrev-commit --date=short
+	graph = !git gr --all
+
+	ci = commit
+	cm = commit -m
+	cam = commit -am
+	amend = commit --amend
+	cane = commit --ammend --no-edit
 
 	branches = branch -a
 	tags = tag
@@ -46,18 +60,15 @@
 	unstage = reset -q HEAD --
 	discard = checkout --
 	uncommit = reset --mixed HEAD~1
-	amend = commit --amend
 	precommit = diff --cached --diff-algorithm=minimal -w
 	unmerged = diff --name-only --diff-filter=U
 	nuke = !git reset --hard HEAD && git clean -df
 
-	cane = commit --ammend --no-edit
 	dlc = diff --cached HEAD^
 
 	index = ls-files -s
 	head = ls-tree -r HEAD
 	last = log -1 HEAD
-	graph = log --graph --pretty=format:'%C(bold yellow)%d %C(reset)%C(cyan)%h %C(dim white)- %C(reset)%s %C(dim blue)(%cr) %C(dim white)<%an>%Creset' --abbrev-commit --date=short --all
 
 
 [push]
