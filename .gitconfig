@@ -35,6 +35,7 @@
 	co = checkout
 	cob = checkout -b
 	br = branch
+	bra = branch -a
 	st = status -sb
 	lg = log --oneline
 	gr = log --graph \
@@ -61,10 +62,11 @@
 	discard = checkout --
 	uncommit = reset --mixed HEAD~1
 	precommit = diff --cached --diff-algorithm=minimal -w
-	unmerged = diff --name-only --diff-filter=U
+	unmerged = !git diff --name-only --diff-filter=U | xargs git status -sb 
 	nuke = !git reset --hard HEAD && git clean -df
 
 	dlc = diff --cached HEAD^
+	dno = diff --name-only
 
 	index = ls-files -s
 	head = ls-tree -r HEAD
