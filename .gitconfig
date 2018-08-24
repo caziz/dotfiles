@@ -39,14 +39,15 @@
 	st = status -sb
 	lg = log --oneline
 	gr = log --graph \
-	--pretty=format:'%C(bold yellow)%d \
-	%C(reset)%C(cyan)%h %C(dim white)- \
-	%C(reset)%s %C(dim blue)(%cr) \
+	--pretty=format:'%C(bold yellow)%d\
+	%C(reset)%C(cyan)%h %C(dim white)-\
+	%C(reset)%s %C(dim blue)(%cr)\
 	%C(dim white)<%an>%C(reset)' \
 	--abbrev-commit --date=short
 	graph = !git gr --all
 
 	ci = commit
+	acm = !git add . && git commit -m
 	cm = commit -m
 	cam = commit -am
 	amend = commit --amend
@@ -71,9 +72,19 @@
 	index = ls-files -s
 	head = ls-tree -r HEAD
 	last = log -1 HEAD
+# temp
+
+	ff = !git diff --name-only caziz/text-transform | grep -v 'win' | grep -v '.*.js' | grep -v 'Images.xcassets' | \
+	grep -v 'SparklerCppTests' | grep -v 'SparklerWindows' | grep -v 'SparklerXamlUnitTest'
+	df = !git diff caziz/text-transform
 
 
 [push]
 	default = tracking
 [credential]
 	helper = osxkeychain
+[mergetool "sublime"]
+	cmd = subl -w $MERGED
+	trustExitCode = false
+[merge]
+	tool = opendiff
