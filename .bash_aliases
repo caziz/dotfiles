@@ -1,6 +1,7 @@
 alias ea='open ~/.bash_aliases'
 alias rl='source ~/.bash_aliases'
 alias ls='ls -G'
+alias g='git'
 alias mkdir='mkdir -pv'
 mcd()  { if [ "$#" -ne 1 ]; then echo "usage: mcd directory"; else mkdir "$1"; cd "$1"; fi;}
 mk() {
