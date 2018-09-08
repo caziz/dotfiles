@@ -34,6 +34,7 @@
 
 	co = checkout
 	cob = checkout -b
+	cp = cherry-pick
 	br = branch
 	bra = branch -a
 	st = status -sb
