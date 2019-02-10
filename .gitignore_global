@@ -3,3 +3,12 @@
 .DS_Store
 .DS_Store?
 .Trashes
+
+# Temporary
+*~
+
+# IDE Files
+.vscode
+.idea
+.iml
+*.sublime-workspace
