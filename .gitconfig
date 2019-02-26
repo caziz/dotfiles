@@ -70,16 +70,6 @@
 	dlc = diff --cached HEAD^
 	dno = diff --name-only
 
-	index = ls-files -s
-	head = ls-tree -r HEAD
-	last = log -1 HEAD
-# temp
-
-	ff = !git diff --name-only caziz/text-transform | grep -v 'win' | grep -v '.*.js' | grep -v 'Images.xcassets' | \
-	grep -v 'SparklerCppTests' | grep -v 'SparklerWindows' | grep -v 'SparklerXamlUnitTest'
-	df = !git diff caziz/text-transform
-
-
 [push]
 	default = tracking
 [credential]
