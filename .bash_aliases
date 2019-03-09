@@ -1,7 +1,6 @@
 # CS 136 DeterLab
-alias deter='ssh la136ah@users.deterlab.net'
-alias s='deter'
-alias tunnel='ssh la136ah@users.deterlab.net -L 8118:bob.la136ah-mitm.UCLA136.isi.deterlab.net:80'
+alias s='ssh deter'
+alias tunnel='ssh -N tunnel'
 
 # CS 161
 alias lisp='clisp -i ~/Desktop/hw*.lsp'
@@ -71,8 +70,6 @@ alias path='echo -e ${PATH//:/\\n}'
 # alias fuse_setup='mkdir ~/seasnet/; sshfss; open ~/SEASNET'
 # alias fuse='fuse_setup; while [ $? -ne 0 ]; do ufuse; sleep 1; fuse_setup; open ~/SEASNET; done'
 # alias ufuse='umount ~/seasnet/; rmdir ~/seasnet'
-alias sshfs_help=
-
 
 fuse() {
   LOC="$HOME/Desktop"
@@ -128,7 +125,6 @@ ghcl() {
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 # macOS config commands
-alias spacer='defaults write com.apple.dock persistent-apps -array-add "{'tile-type'='spacer-tile';}"; killall Dock'
 alias sct='defaults write com.apple.screencapture type'
 alias lwt='sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText'
 alias cpu='sysctl -n machdep.cpu.brand_string'
