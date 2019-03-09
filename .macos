@@ -1,12 +1,11 @@
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
-
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
-# Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+# Save screenshots to ~/Downloads
+defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
 
 ### NSGlobalDomain (these are usually annoying when coding)
 
@@ -33,15 +32,20 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 # Display full POSIX path as Finder window title
 # defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+killall Finder
 
 ### Dock
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 
-# Remove the animation when hiding/showing the Dock
+# Shorten the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0.4
 
 # Automatically hide and show the Dock
@@ -55,11 +59,21 @@ defaults write com.apple.dock show-recents -bool false
 
 # Add a spacer to the left side of the Dock (where the applications are)
 #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
 # Add a spacer to the right side of the Dock (where the Trash is)
 #defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
+killall Dock
 
 ### Messages
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+
+killall Messages
+
+# Enable plain text as default format in TextEdit
+defaults write com.apple.TextEdit RichText -int 0
+
+killall TextEdit
 
