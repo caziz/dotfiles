@@ -6,6 +6,7 @@
 
 # Temporary
 *~
+.swap
 
 # IDE Files
 .vscode
