@@ -1,4 +1,4 @@
-for file in ~/.{bash_aliases,bash_prompt,macos}; do
+for file in ~/.{bash_aliases,bash_prompt}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 # Change meta key to option key in XQuartz, launches XQuartz
@@ -20,7 +20,7 @@ if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completio
 fi;
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-# [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # OPAM (OCaml) configuration
 # . /Users/christopheraziz/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
@@ -34,7 +34,7 @@ fi;
 # PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 # export PATH
 
-# Add Sumblime to path
+# Add Sublime to path
 # PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:${PATH}"
 # export PATH
 # export EDITOR='subl -w'
