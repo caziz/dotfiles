@@ -26,6 +26,12 @@
   added = green
   changed = yellow
   untracked = red
+[pretty]
+	custom = format:'%C(bold yellow)%d\
+	%C(reset)%C(cyan)%h %C(dim white)-\
+	%C(reset)%s %C(dim blue)(%cr)\
+	%C(dim white)<%an>%C(reset)' \
+	--abbrev-commit --date=short
 [alias]
 	url = !open $(git config remote.origin.url)
 
@@ -39,12 +45,7 @@
 	bra = branch -a
 	st = status -sb
 	lg = log --oneline
-	gr = log --graph \
-	--pretty=format:'%C(bold yellow)%d\
-	%C(reset)%C(cyan)%h %C(dim white)-\
-	%C(reset)%s %C(dim blue)(%cr)\
-	%C(dim white)<%an>%C(reset)' \
-	--abbrev-commit --date=short
+	gr = log --graph --pretty=custom --abbrev-commit --date=short
 	graph = !git gr --all
 
 	ci = commit
@@ -69,7 +70,6 @@
 
 	dlc = diff --cached HEAD^
 	dno = diff --name-only
-
 [push]
 	default = tracking
 [credential]
