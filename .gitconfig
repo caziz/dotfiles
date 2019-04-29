@@ -35,7 +35,7 @@
 [alias]
 	url = !open $(git config remote.origin.url)
 
-	alias = !git config -l | grep alias | less
+	alias = !git config -l | grep alias | sed 's/^......//' | less
 	ec = config --global -e
 
 	co = checkout

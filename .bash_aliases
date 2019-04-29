@@ -23,6 +23,8 @@ fi
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias wrapon='tput rmam'
+alias wrapoff='tput smam'
 
 # navigation
 alias ..='cd ..'
