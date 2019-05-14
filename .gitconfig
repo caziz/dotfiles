@@ -22,11 +22,10 @@
   changed = yellow
   untracked = red
 [pretty]
-	custom = format:'%C(bold yellow)%d\
+	custom = %C(bold yellow)%d\
 	%C(reset)%C(cyan)%h %C(dim white)-\
 	%C(reset)%s %C(dim blue)(%cr)\
-	%C(dim white)<%an>%C(reset)' \
-	--abbrev-commit --date=short
+	%C(dim white)<%an>%C(reset)
 [alias]
 	url = !open $(git config remote.origin.url)
 
