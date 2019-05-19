@@ -8,19 +8,24 @@ set showcmd           "multi-keystroke commands will be shown in bottom right
 set noerrorbells      "disable error bells
 set belloff=all       "disable bell for non-errors, too
 
-" nicer tabing
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
 set wildmenu
 set wildmode=list,full
+" eg.
+" - hit tab to :find by partial match
+" - use * to make it fuzzy
+" - :b to autocomplete an open buffer
 
-" tab/whitespace config
-set expandtab       " Use TABs instead of spaces
-" set tabstop=4       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
+" use spaces instead tabs
+set expandtab
+" set tab size
 set tabstop=2
 
-" add ruler
+" add ruler at column 80
 set colorcolumn=80
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
@@ -30,7 +35,7 @@ highlight PmenuSel ctermfg=yellow guifg=yellow ctermbg=darkblue guibg=darkblue
 highlight PmenuSbar ctermbg=darkgrey guibg=darkgrey
 highlight PmenuThumb ctermbg=lightgrey guibg=lightgrey
 
-" wean off the arrow keys!
+" wean off the arrow keys
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
