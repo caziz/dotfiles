@@ -2,11 +2,15 @@ syntax on
 set hlsearch
 set incsearch
 
-set nocompatible      "don't do weird stuff for backwards compatibility with vi
-set number            "turn on line numbers
-set showcmd           "multi-keystroke commands will be shown in bottom right
-set noerrorbells      "disable error bells
-set belloff=all       "disable bell for non-errors, too
+set title             " show file in titlebar
+set ruler             " show cursor position in status bar
+
+set nocompatible      " don't do weird stuff for backwards compatibility with vi
+set number            " turn on line numbers
+set relativenumber    " turn on relative line numbers
+set showcmd           " multi-keystroke commands will be shown in bottom right
+set noerrorbells      " disable error bells
+set belloff=all       " disable bell for non-errors, too
 
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
@@ -25,9 +29,12 @@ set expandtab
 " set tab size
 set tabstop=2
 
+" display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+
 " add ruler at column 80
-set colorcolumn=80
-highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " customize popup menu color
 highlight Pmenu ctermfg=white guifg=white ctermbg=darkgrey guibg=darkgrey
