@@ -1,3 +1,6 @@
+# Ruby environment
+eval "$(rbenv init -)"
+
 for file in ~/.{bash_aliases,bash_prompt}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
@@ -38,3 +41,4 @@ fi;
 # PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:${PATH}"
 # export PATH
 # export EDITOR='subl -w'
+export PATH="$HOME/.rbenv/bin:$PATH"
