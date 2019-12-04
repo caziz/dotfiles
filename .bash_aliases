@@ -1,10 +1,3 @@
-# CS 136 DeterLab
-alias s='ssh deter'
-alias tunnel='ssh -N tunnel'
-
-# CS 161
-alias lisp='clisp -i ~/Desktop/hw*.lsp'
-
 # editing dotfiles
 alias ea='open ~/.bash_aliases' # edit aliases
 alias ep='open ~/.bash_prompt' # edit prompt
@@ -36,7 +29,7 @@ alias cddt='cd ~/Desktop'
 alias cddoc='cd ~/Documents'
 alias cddl='cd ~/Downloads'
 alias cdapp='cd /Applications'
-go() { cd "$1" && ls; }
+cl() { cd "$1" && ls; }
 cs() { cd "$HOME/Developer/UCLA-CS-$1"; }
 
 # file creation
