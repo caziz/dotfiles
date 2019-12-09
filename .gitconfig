@@ -3,7 +3,7 @@
 	email = caziz@ucla.edu
 [core]
 	excludesfile = /Users/christopheraziz/.gitignore_global
-	editor = subl -n -w
+	editor = vim
 
 [color]
   ui = auto
@@ -42,18 +42,14 @@
 	gr = log --graph --pretty=custom --abbrev-commit --date=short
 	graph = !git gr --all
 
-	ci = commit
+	c = commit
 	acm = !git add . && git commit -m
 	cm = commit -m
 	cam = commit -am
 	amend = commit --amend
-	cane = commit --ammend --no-edit
+	cane = commit --amend --no-edit
 
-	branches = branch -a
-	tags = tag
-	stashes = stash list
-	remotes = remote -v
-	
+	update = fetch origin master:master
 	patch = add -p
 	unstage = reset -q HEAD --
 	discard = checkout --
@@ -64,6 +60,7 @@
 
 	dlc = diff --cached HEAD^
 	dno = diff --name-only
+	pushup = push -u origin HEAD
 [push]
 	default = tracking
 [credential]
